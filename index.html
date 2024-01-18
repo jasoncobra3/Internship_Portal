@@ -5,51 +5,89 @@
     <title>Internship Portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="dc_logo.png">
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
+    
 
-    <nav>
-        <div class="logo">
-            <img src="dc_logo.png" alt="Company Logo">
-            <b class="company_name">DCDIUM Technologies</b>
-        </div>
 
-        <div class="dropdown-container">
-            <div class="dropdown">
-                <span>Internships</span>
-                <div class="dropdown-content">
-                    <a href="#">Internship in Pune</a>
-                    <a href="#">Internship in Mumbai</a>
-                    <a href="#">Internship in Banglore</a>
-                    <a href="#">Internship in Delhi</a>
-                    
+    <!-- Navbar -->
+    <div id="navbar">
+        <nav>
+            <input type="checkbox" , id="check">
+            <label for="check">
+            <i class="fas fa-bars" id="bar">☰</i>
+            <i class="fas fa-times" id="cancel">✖</i>
+            <i class="glyphicon glyphicon-bars" id="bar"></i>
+            </label>
+            <div class="logo">
+                <img src="dc_logo.png" alt="Company Logo">
+                <b class="company_name">DCDIUM Technologies</b>
+            </div>
+
+            <div class="dropdown-container">
+                <div class="dropdown">
+                    <span>Internships</span>
+                    <div class="dropdown-content">
+                        <a href="#">Internship in Pune</a>
+                        <a href="#">Internship in Mumbai</a>
+                        <a href="#">Internship in Bangalore</a>
+                        <a href="#">Internship in Delhi</a>
+                    </div>
+                </div>
+
+                <div class="dropdown">
+                    <span>Courses</span>
+                    <div class="dropdown-content">
+                        <a href="#">Data Science</a>
+                        <a href="#">Machine Learning</a>
+                        <a href="#">Web Development</a>
+                        <a href="#">Digital Marketing</a>
+                    </div>
                 </div>
             </div>
 
-            <div class="dropdown">
-                <span>Courses</span>
-                <div class="dropdown-content">
-                    <a href="#">Data Science</a>
-                    <a href="#">Machine Learning</a>
-                    <a href="#">Web Development</a>
-                    <a href="#">Digital Marketing</a>
-                    
-                </div>
+            <div class="buttons">
+                <i class="glyphicon glyphicon-search" onclick="toggleSearchSection()"></i>
+                <button id="search" class="btn1" onclick="toggleSearchSection()">Search</button>
+                <button id="login" class="btn2">Login</button>
+                <button id="register" class="btn3">Registration</button>
             </div>
-        </div>
+        </nav>
+    </div>
 
+   
+    <!-- Search Section -->
+    <div id="search-section">
+        <span class="cross-button" onclick="toggleSearchSection()">✖</span>
+        <form action="#" method="GET" class="search-wrapper">
+            <button type="submit" class="search-button">Internship</button>
+            <input type="text" class="search-box" name="search" placeholder="Search here......">
+        </form>
+    </div>
 
-        <div class="buttons">
-            <i class="glyphicon glyphicon-search"></i>
-            <button id="search" onclick="window.location.href='search_page.html'">Search</button>
-            <button id="login">Login</button>
-            <button id="register">Registration</button>
-        </div>
-    </nav>
+    <script>
+       
+        function toggleSearchSection() {
+            var searchSection = document.getElementById("search-section");
+            var navbar = document.getElementById("navbar");
+            var mainContent = document.getElementById("main-content");
 
-    <!-- page content goes here -->
+            if (searchSection.style.display === "none") {
+                searchSection.style.display = "block";
+                navbar.style.display = "none";
+                mainContent.style.display = "none";
+            } else {
+                searchSection.style.display = "none";
+                navbar.style.display = "block";
+                mainContent.style.display = "block";
+            }
+        }
+        
+    </script>
 
 </body>
 </html>
